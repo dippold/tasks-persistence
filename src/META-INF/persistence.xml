@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="TasksPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>org.builderforce.tasks.persistence.entities.Rule</class>
+    <class>org.builderforce.tasks.persistence.entities.AbstractEntity</class>
+    <class>org.builderforce.tasks.persistence.entities.Log</class>
+    <class>org.builderforce.tasks.persistence.entities.CompanyGroup</class>
+    <class>org.builderforce.tasks.persistence.entities.Company</class>
+    <class>org.builderforce.tasks.persistence.entities.User</class>
+    <class>org.builderforce.tasks.persistence.entities.UserCompany</class>
+    <class>org.builderforce.tasks.persistence.entities.UserRights</class>
+    <class>org.builderforce.tasks.persistence.entities.WorkedHours</class>
+    <class>org.builderforce.tasks.persistence.entities.Task</class>
+    <class>org.builderforce.tasks.persistence.entities.UserTask</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://tasksdb.eastus.cloudapp.azure.com:3306/tasks?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Lazaro2020@"/>
+      <property name="eclipselink.logging.level" value="WARNING"/>
+      <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>
