@@ -11,6 +11,8 @@ import org.builderforce.tasks.persistence.entities.Log;
  * 
  */
 public class LogDAO extends LogJpaController {
+
+    private static final long serialVersionUID = 5242089849046095824L;
     
     public LogDAO(EntityManagerFactory emf) {
         super(emf);

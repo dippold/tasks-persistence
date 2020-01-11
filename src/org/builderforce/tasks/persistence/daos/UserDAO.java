@@ -14,6 +14,8 @@ import org.builderforce.tasks.persistence.entities.User;
  * 
  */
 public class UserDAO extends UserJpaController {
+
+    private static final long serialVersionUID = -8596828744341416480L;
     
     public UserDAO(EntityManagerFactory emf) {
         super(emf);

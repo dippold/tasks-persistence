@@ -1,9 +1,11 @@
 package org.builderforce.tasks.persistence.setup;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import org.builderforce.tasks.persistence.daos.LogDAO;
+import org.builderforce.tasks.persistence.entities.Log;
 import org.builderforce.tasks.persistence.enums.RULES;
 
 /**
@@ -24,13 +26,9 @@ public class Setup {
 //            System.out.println(createRulesMasterData());
         }
         
-//        updateInRuleTest("Project Admin");
-        
-//        System.out.println(showRules());
-//        
         System.out.println(showRules());
-//        
-//        System.out.println("Tasks Mng Setup finish!");        
+        System.out.println(showLogs());
+
     }         
     
 //    private static void updateInRuleTest(String ruleName) {
@@ -60,37 +58,44 @@ public class Setup {
         
         return out;
     }
-    
-    /* CREATE MEMBERS... */
-//    private static String createRulesMasterData() {
-//        final String methodName = new Object() {
-//        }.getClass().getEnclosingMethod().getName();
-//        StringBuilder sb = new StringBuilder("  + ");
-//        sb.append(methodName);
-//        sb.append("...");
-//        String[] names = {
-//            "System Admin", 
-//            "Project Admin", 
-//            "Task Admin",
-//            "Task Performance",
-//            "Project Stakeholder",
-//            "Portifolio Admin",
-//            "Portifolio Stakeholder"
-//        };
+
+//    private static void updateInRuleTest(String ruleName) {
 //        EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 //        RuleDAO dao = new RuleDAO(factory);
-//        for (String name : names) {
-//            Rule o = new Rule();
-//            o.setName(name);
-//            o.setIsMasterData(true);
-//            dao.create(o);
-//        }
-//        sb.append("\n  + ");
-//        sb.append(methodName);
-//        sb.append(" finish!\n");
-//
-//        return sb.toString();
-//    }    
+//        Rule rule;        
+//        try {
+//            rule = dao.findByName(ruleName);
+//            rule.setIsBlocked(true);
+//            Date date = new Date();
+//            rule.setUpdatedIn(date);
+//            dao.edit(rule);
+//            System.out.println("updateInRuleTest(String ruleName): Updated Rule: " + ruleName);
+//        } catch(Exception e) {
+//            System.out.println("updateInRuleTest(String ruleName): " + e.getMessage());
+//        }         
+//    }
+    
+    /* CREATE MEMBERS... */
+    private static String showLogs() {
+        final String methodName = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        StringBuilder sb = new StringBuilder("  + ");
+        sb.append(methodName);
+        sb.append("...");
+        
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+        LogDAO dao = new LogDAO(factory);
+        List<Log> lst = dao.findAll();
+        for (Log o : lst) {
+            sb.append("/n");
+            sb.append(o);
+        }
+        sb.append("\n  + ");
+        sb.append(methodName);
+        sb.append(" finish!\n");
+
+        return sb.toString();
+    }    
     
     /* UTILS MEMBERS... */
     private static String getFirstName(String name) {
