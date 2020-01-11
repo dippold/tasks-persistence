@@ -13,7 +13,7 @@ public enum RULES {
 
     PROJECT_MANAGER(1,"Gerente de projetos"),
     TASK_ADMIN(2,"Administrador de tarefas"),
-    PROJECT_MEMBER(3,"Equipe do projeto"),
+    PROJECT_TEAM(3,"Equipe do projeto"),
     PROJECT_STAKEHOLDER(4,"Stakeholder do projeto");
 
     public static String[] getDescriptions() {
@@ -24,6 +24,15 @@ public enum RULES {
 
         return list.toArray(new String[list.size()]);
     }
+    
+    public static String[] getIds() {
+        java.util.LinkedList<String> list = new LinkedList<>();
+        for (RULES o : RULES.values()) {
+            list.add(Integer.toString(o.getId()));
+        }
+
+        return list.toArray(new String[list.size()]);
+    }    
     
     private final int id;
     private final String description;
@@ -40,8 +49,5 @@ public enum RULES {
     public String getDescription() {
         return description;
     }
-    
-    
-    
-    
+        
 }

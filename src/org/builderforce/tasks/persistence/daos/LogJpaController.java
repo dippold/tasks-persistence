@@ -129,7 +129,7 @@ public class LogJpaController implements Serializable {
             Root<Log> rt = cq.from(Log.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
-            return ((Long) q.getSingleResult()).intValue();
+            return ((Number) q.getSingleResult()).intValue();
         } finally {
             em.close();
         }
