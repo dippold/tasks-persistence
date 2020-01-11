@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 @Entity
 public class UserRights extends AbstractEntity {
 
+    private static final long serialVersionUID = -8171888937428654607L;
+
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
     private Long userId;     
 

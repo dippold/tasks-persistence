@@ -23,6 +23,8 @@ import javax.persistence.TemporalType;
 
 public class WorkedHours extends AbstractEntity {
 
+    private static final long serialVersionUID = 654826100623562255L;
+
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
     private Long taskId;     
     

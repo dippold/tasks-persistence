@@ -24,6 +24,8 @@ import javax.persistence.NamedQuery;
 
 public class UserCompany  extends AbstractEntity {
 
+    private static final long serialVersionUID = 3731693908133364150L;
+
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
     private Long userId;  
     

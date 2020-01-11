@@ -6,7 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import org.builderforce.tasks.persistence.daos.RuleDAO;
 import org.builderforce.tasks.persistence.entities.Rule;
-import org.builderforce.tasks.persistence.enums.RulesEnum;
+import org.builderforce.tasks.persistence.enums.RULES;
 
 /**
  *
@@ -25,14 +25,14 @@ public class Setup {
         if (CREATE) {
             System.out.println(createRulesMasterData());
         }
-
+        
 //        updateInRuleTest("Project Admin");
         
-        System.out.println(showRules());
-        
+//        System.out.println(showRules());
+//        
         System.out.println(listEnumRules());
-        
-        System.out.println("Tasks Mng Setup finish!");        
+//        
+//        System.out.println("Tasks Mng Setup finish!");        
     }         
     
     private static void updateInRuleTest(String ruleName) {
@@ -73,7 +73,7 @@ public class Setup {
     
     private static String listEnumRules() {
         String out = "listEnumRules() invoked...";
-        String[] lst = RulesEnum.getNames();
+        String[] lst = RULES.getDescriptions();
      
         for (int i=0;i<lst.length;i++) {
             out += "\n" + lst[i];

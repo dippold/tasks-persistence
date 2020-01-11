@@ -19,4 +19,6 @@ import javax.persistence.NamedQuery;
 
 public class CompanyGroup extends AbstractEntity {
     
+    private static final long serialVersionUID = 4533159108922266542L;
+    
 }

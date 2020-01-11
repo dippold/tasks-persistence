@@ -18,4 +18,6 @@ import javax.persistence.NamedQuery;
 
 public class Rule extends AbstractEntity {
     
+    private static final long serialVersionUID = 982737860034138359L;
+    
 }

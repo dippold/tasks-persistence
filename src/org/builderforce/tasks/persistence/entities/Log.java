@@ -21,6 +21,8 @@ import javax.persistence.NamedQuery;
             query = "SELECT o FROM Log o WHERE o.userId = :userId ORDER BY o.createdIn DESC")
 })
 public class Log extends AbstractEntity {
+
+    private static final long serialVersionUID = -7220897685477631248L;
    
     @Column(nullable = false, columnDefinition = "BIGINT(20) default 0")
     private Long companyId = 0L;    

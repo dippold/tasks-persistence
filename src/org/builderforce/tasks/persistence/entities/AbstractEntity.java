@@ -25,6 +25,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class AbstractEntity implements Serializable {
+
     @Id
     @SequenceGenerator(name = "ENTITY_GEN", sequenceName = "ENTITY_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO)

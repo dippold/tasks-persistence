@@ -28,6 +28,8 @@ import javax.persistence.NamedQuery;
 })
 
 public class User extends AbstractEntity {
+
+    private static final long serialVersionUID = 7552812407729496266L;
     
     @Column(unique = true, nullable = false, length = 45)
     private String email;

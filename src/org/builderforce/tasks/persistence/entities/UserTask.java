@@ -21,6 +21,8 @@ import javax.persistence.NamedQuery;
 })
 
 public class UserTask extends AbstractEntity {
+
+    private static final long serialVersionUID = -5521878598596438445L;
     
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
     private Long taskId;

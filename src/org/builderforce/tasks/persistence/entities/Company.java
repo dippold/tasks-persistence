@@ -18,6 +18,8 @@ import javax.persistence.NamedQuery;
 })
 
 public class Company extends AbstractEntity {
+
+    private static final long serialVersionUID = 8748148654479638388L;
     
     @Column(nullable = false, columnDefinition = "BIGINT(20) default 1")
     private Long companyGroupId = 1L; 
