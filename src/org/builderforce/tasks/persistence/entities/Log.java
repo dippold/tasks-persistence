@@ -32,13 +32,25 @@ public class Log extends AbstractEntity {
 
     @Column(nullable = false, columnDefinition = "BIGINT(20) default 0")
     private Long projectId = 0L;
+
+    @Column(unique = false, nullable = false, length = 45)
+    private String entityName;
     
     @Column(nullable = false, columnDefinition = "BIGINT(20) default 0")
     private Long entityId = 0L;
-
-    @Column(unique = false, nullable = false, length = 15)
+    
+    @Column(unique = false, nullable = false, length = 45)
     private String userAction;
 
+    @Column(unique = false, nullable = true, length = 45)
+    private String property;
+    
+    @Column(unique = false, nullable = true, length = 45)
+    private String oldValue;
+    
+    @Column(unique = false, nullable = true, length = 45)
+    private String newValue;    
+    
     public Long getCompanyId() {
         return companyId;
     }
@@ -79,6 +91,36 @@ public class Log extends AbstractEntity {
         this.userAction = userAction;
     }
 
-    
+    public String getProperty() {
+        return property;
+    }
+
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
+    public String getOldValue() {
+        return oldValue;
+    }
+
+    public void setOldValue(String oldValue) {
+        this.oldValue = oldValue;
+    }
+
+    public String getNewValue() {
+        return newValue;
+    }
+
+    public void setNewValue(String newValue) {
+        this.newValue = newValue;
+    }    
+
+    public String getEntityName() {
+        return entityName;
+    }
+
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
+    }    
     
 }
