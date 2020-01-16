@@ -23,6 +23,8 @@ import javax.persistence.TemporalType;
 
 public class Task extends AbstractEntity {
 
+    private static final long serialVersionUID = -3395217012291199518L;
+
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
     private Long projectId = 1L; 
     
