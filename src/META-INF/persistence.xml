@@ -13,6 +13,7 @@
     <class>org.builderforce.tasks.persistence.entities.WorkedHours</class>
     <class>org.builderforce.tasks.persistence.entities.Task</class>
     <class>org.builderforce.tasks.persistence.entities.UserTask</class>
+    <class>org.builderforce.tasks.persistence.entities.Project</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://tasksdb.eastus.cloudapp.azure.com:3306/tasks?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

@@ -24,13 +24,13 @@ import javax.persistence.TemporalType;
 public class Task extends AbstractEntity {
 
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
-    private Long projectId; 
+    private Long projectId = 1L; 
     
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
-    private Long projectManagerId;
+    private Long projectManagerId = 1L;
 
     @Column(nullable = false, columnDefinition = "INT(1)")
-    private Long sequenceId;    
+    private Long sequenceId = 99L;    
 
     @Basic(optional = false)
     @Temporal(TemporalType.DATE)
