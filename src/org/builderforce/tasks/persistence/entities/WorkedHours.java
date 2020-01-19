@@ -39,6 +39,9 @@ public class WorkedHours extends AbstractEntity {
     @Column(nullable = false, columnDefinition = "BIGINT(10)")
     private int workedHours;
 
+    @Column(nullable = false, columnDefinition = "INT(1)")
+    private int completenessPercentage = 0;    
+    
     public Long getTaskId() {
         return taskId;
     }
@@ -71,7 +74,12 @@ public class WorkedHours extends AbstractEntity {
         this.workedHoursDate = workedHoursDate;
     }
 
-    
-    
+    public int getCompletenessPercentage() {
+        return completenessPercentage;
+    }
+
+    public void setCompletenessPercentage(int completenessPercentage) {
+        this.completenessPercentage = completenessPercentage;
+    }
     
 }
