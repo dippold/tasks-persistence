@@ -38,7 +38,7 @@ public class User extends AbstractEntity {
     private String passwd;
    
     @Column(nullable = false, columnDefinition = "default 1")
-    private int ruleId = 1;     
+    private Long ruleId = 1L;     
 
     public String getEmail() {
         return email;
@@ -56,11 +56,11 @@ public class User extends AbstractEntity {
         this.passwd = passwd;
     }
 
-    public int getRuleId() {
+    public Long getRuleId() {
         return ruleId;
     }
 
-    public void setRuleId(int ruleId) {
+    public void setRuleId(Long ruleId) {
         this.ruleId = ruleId;
     }
     

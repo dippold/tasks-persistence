@@ -11,10 +11,10 @@ import java.util.LinkedList;
  */
 public enum RULES {
 
-    PROJECT_MANAGER(1,"Gerente de projetos"),
-    TASK_ADMIN(2,"Administrador de tarefas"),
-    PROJECT_TEAM(3,"Equipe do projeto"),
-    PROJECT_STAKEHOLDER(4,"Stakeholder do projeto");
+    PROJECT_MANAGER(1L,"Gerente de projetos"),
+    TASK_ADMIN(2L,"Administrador de tarefas"),
+    PROJECT_TEAM(3L,"Equipe do projeto"),
+    PROJECT_STAKEHOLDER(4L,"Stakeholder do projeto");
 
     public static String[] getDescriptions() {
         java.util.LinkedList<String> list = new LinkedList<>();
@@ -28,21 +28,21 @@ public enum RULES {
     public static String[] getIds() {
         java.util.LinkedList<String> list = new LinkedList<>();
         for (RULES o : RULES.values()) {
-            list.add(Integer.toString(o.getId()));
+            list.add(Long.toString(o.getId()));
         }
 
         return list.toArray(new String[list.size()]);
     }    
     
-    private final int id;
+    private final Long id;
     private final String description;
     
-    RULES(int id, String description) {
+    RULES(Long id, String description) {
         this.id = id;
         this.description = description;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

@@ -32,8 +32,8 @@ public class UserProject  extends AbstractEntity {
     @Column(nullable = false, columnDefinition = "BIGINT(20)")
     private Long projectId;
     
-    @Column(nullable = false, columnDefinition = "default 1")
-    private int ruleId = 1;    
+    @Column(nullable = false, columnDefinition = "BIGINT(20)")
+    private Long ruleId = 1L;    
 
     public Long getUserId() {
         return userId;
@@ -51,12 +51,13 @@ public class UserProject  extends AbstractEntity {
         this.projectId = projectId;
     }    
 
-    public int getRuleId() {
+    public Long getRuleId() {
         return ruleId;
     }
 
-    public void setRuleId(int ruleId) {
+    public void setRuleId(Long ruleId) {
         this.ruleId = ruleId;
     }
+
     
 }
